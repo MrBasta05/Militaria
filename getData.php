@@ -1,6 +1,6 @@
 <?php
 
-    $con=mysqli_connect("localhost","my_user","my_password","my_db");
+    $con=mysqli_connect("localhost","root","","militaria");
     // Check connection
     if (mysqli_connect_errno())
     {
@@ -8,8 +8,19 @@
     }
 
     // Perform queries
-    mysqli_query($con,"SELECT * FROM kategoria");
-
+    $req = mysqli_query($con,"SELECT * FROM produkt");
+    $data = array();
+    if(mysqli_num_rows($req)>0){
+        while($row = mysqli_fetch_assoc($req)){
+            $data[] = $row;
+        }
+    }
+    // $res = mysqli_fetch_assoc($req);
+    // echo "<pre>";
+    print_r(json_encode($data));
+    // echo "</pre>";
+    // $json = json_encode($res);
+    // print_r($json);
     mysqli_close($con);
 
 ?>
