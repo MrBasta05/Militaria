@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/podstrony.css" />
+		<link rel="stylesheet" href="css/mediaquery.css">
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&display=swap"
+			rel="stylesheet"
+		/>
+		<script defer src="index.js"></script>
+		<title>Warzone</title>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="index.html"><img src="img/logo.png" alt="Logo" class="logo" /></a>
+			</div>
+			<input id="menu-toggle" type="checkbox" />
+			<label class="menu-button-container" for="menu-toggle">
+				<div class="menu-button"></div>
+			</label>
+			<input type="text" name="search" placeholder="🔎">
+			<ul class="menu">
+				<li><a href="#">AMUNICJA</a></li>
+				<li><a href="bronbiala.html">BROŃ BIAŁA</a></li>
+				<li><a href="#">BROŃ PALNA</a></li>
+				<li><a href="#">POJAZDY</a></li>
+				<li><a href="#">NARZĘDZIA</a></li>
+				<li><a href="#">🛒</a></li>
+			</ul>
+		</nav>
+		<main>
+			<div onclick="" class="product-main">
+				<h3>
+					<!-- nazwa produktu -->
+				</h3>
+				<div>
+					<!-- opis produktu -->
+				</div>
+				<div>
+					<!-- cena produktu -->
+				</div>
+				<img src="" alt="product" />
+				<!-- zdjęcie produktu, src=id_produktu.jpg -->
+			</div>
+			<div onclick="" class="product-main">
+				<h3></h3>
+				<div></div>
+				<div></div>
+				<img src="" alt="product" />
+			</div>
+
+		</main>
+		<footer>
+			<div class="dane">
+				<h2>Dane kontaktowe</h2>
+				<ul>
+					<li>Telefon: +48 123123123</li>
+					<li>E-mail: warzone@gmail.com</li>
+					<li><a href="#">Facebook</a></li>
+					<li><a href="#">Instagram</a></li>
+				</ul>
+			</div>
+			<div class="regulamin">
+				<h2>Regulamin</h2>
+				<ul>
+					<li>Regulamin</li>
+					<li>Polityka cookies</li>
+					<li>Polityka prywatności</li>
+					<li>Reklamacje i gwarancja</li>
+					<li>Karty podarunkowe</li>
+				</ul>
+			</div>
+			<div class="adres">
+				<h2>Adres</h2>
+				<ul>
+					<li>Miasto</li>
+					<li>Ulica:</li>
+					<li>Kod pocztowy:</li>
+				</ul>
+			</div>
+
+			<div class="mapa">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2547.254762074967!2d18.930974915726797!3d50.324498079458095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716d2ef1eac1bd9%3A0x1e9e7cacb5c952b8!2sArmii%20Krajowej%2C%2041-900%20Bytom!5e0!3m2!1spl!2spl!4v1646818739357!5m2!1spl!2spl"
+					width="400"
+					height="300"
+					style="border: 0"
+					allowfullscreen=""
+					loading="lazy"
+				></iframe>
+			</div>
+		</footer>
+	</body>
+</html>
