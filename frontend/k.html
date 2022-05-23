@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/podstrony.css" />
-		<link rel="stylesheet" href="css/mediaquery.css">
+		<link rel="stylesheet" href="css/mediaquery.css" />
 		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,19 +13,21 @@
 			href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&display=swap"
 			rel="stylesheet"
 		/>
-		<script defer src="index.js"></script>
+		<script defer type="module" src="./js/kategoria/index.js"></script>
 		<title>Warzone</title>
 	</head>
 	<body>
 		<nav>
 			<div>
-				<a href="index.html"><img src="img/logo.png" alt="Logo" class="logo" /></a>
+				<a href="index.html"
+					><img src="img/logo.png" alt="Logo" class="logo"
+				/></a>
 			</div>
 			<input id="menu-toggle" type="checkbox" />
 			<label class="menu-button-container" for="menu-toggle">
 				<div class="menu-button"></div>
 			</label>
-			<input type="text" name="search" placeholder="🔎">
+			<input type="text" name="search" placeholder="🔎" />
 			<ul class="menu">
 				<li><a href="#">AMUNICJA</a></li>
 				<li><a href="podstrona.html">BROŃ BIAŁA</a></li>
@@ -55,7 +57,6 @@
 				<div></div>
 				<img src="" alt="product" />
 			</div>
-
 		</main>
 		<footer>
 			<div class="dane">
