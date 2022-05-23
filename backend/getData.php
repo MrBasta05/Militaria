@@ -1,6 +1,6 @@
 <?php
 
-    $con=mysqli_connect("localhost","root","","militaria");
+    $con=mysqli_connect("localhost","root","","Militaria");
     // Check connection
     if (mysqli_connect_errno())
     {

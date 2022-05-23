@@ -9,7 +9,9 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"axios": "0.25.0"
+		"@reduxjs/toolkit": "^1.8.1",
+		"axios": "0.25.0",
+		"redux": "^4.2.0"
 	},
 	"type": "module"
 }

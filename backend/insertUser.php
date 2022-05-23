@@ -11,7 +11,8 @@
     $ulica = "";
     $nrulicy = 1;
     // Perform queries
-    mysqli_query($con,"INSERT INTO adres SET wojewodztwo='".$wojewodztwo."', miasto='".$miasto."', ulica='".$ulica."', numer_ulicy='".$nrulicy."';");
+    $query = "INSERT INTO adres SET wojewodztwo='".$wojewodztwo."', miasto='".$miasto."', ulica='".$ulica."', numer_ulicy='".$nrulicy."';";
+    mysqli_query($con, $query);
 
     mysqli_close($con);
 
