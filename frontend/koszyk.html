@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koszyk</title>
+    <link rel="stylesheet" href="css/koszyk.css">
+    <link rel="stylesheet" href="css/mediaquery.css">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&display=swap"
+    rel="stylesheet"
+/>
+</head>
+<body>
+
+    <nav>
+        <div>
+            <a href="index.html"><img src="img/logo.png" alt="Logo" class="logo" /></a>
+        </div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+            <div class="menu-button"></div>
+        </label>
+        <input type="text" name="search" placeholder="🔎">
+        <ul class="menu">
+            <li><a href="#">AMUNICJA</a></li>
+            <li><a href="bronbiala.html">BROŃ BIAŁA</a></li>
+            <li><a href="#">BROŃ PALNA</a></li>
+            <li><a href="#">POJAZDY</a></li>
+            <li><a href="#">NARZĘDZIA</a></li>
+            <li><a href="#">🛒</a></li>
+        </ul>
+    </nav>
+    <main>
+    <div class="cart-container">
+        <div class="header">
+            <h3 class="heading">Koszyk</h3>
+            <h5 class="remove-all">Usuń wszystko</h5>
+        </div>
+
+        <div class="cart-items">
+
+            <div class="image-box">
+                <a href="index.html"><img src="img/logo.png" alt="Logo" class="logo" /></a>
+            </div>
+
+            <div class="product">
+                <h1 class="title">m4a4</h1>
+                <h3 class="subtitle">250mm</h3>
+            </div>
+                <div class="counter">
+                    <div class="btn">+</div>
+                    <div class="count">2</div>
+                    <div class="btn">-</div>
+                </div>
+                <div class="prices">
+                    <div class="amount">2.99zl</div>
+                    <div class="remove"><u>Usuń</u></div>
+            </div>
+        </div>
+
+        
+        <div class="cart-items">
+
+            <div class="image-box">
+                <img src="img/logo.png" style=height:120px  />
+            </div>
+
+            <div class="product">
+                <h1 class="title">m4a4</h1>
+                <h3 class="subtitle">250mm</h3>
+                <img src="" style=height:30px/>
+            </div>
+                <div class="counter">
+                    <div class="btn">+</div>
+                    <div class="count">2</div>
+                    <div class="btn">-</div>
+                </div>
+                <div class="prices">
+                    <div class="amount">2.99zl</div>
+                    <div class="remove"><u>Usuń</u></div>
+            </div>
+        </div>
+
+        <hr>
+        <div class="checkout">
+        <div class="total">
+        <div>
+            <div class="subtotal">Razem</div>
+            <div class="items">1 przedmiot</div>
+            </div>
+            <div class="total-amount">2.99zl</div>
+            </div>
+            <button class="button">Zapłać</button>
+        </div>
+
+    </div>
+    </main>
+</body>
+</html>
