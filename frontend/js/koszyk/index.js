@@ -1,5 +1,9 @@
 import { getCartData } from "./koszyk.js";
-import { handleRemoveAll, handleRemoveOne } from "./eventHandlers.js";
+import {
+	handleChangeAmount,
+	handleRemoveAll,
+	handleRemoveOne,
+} from "./eventHandlers.js";
 
 const initialState = {
 	item: {},
@@ -31,15 +35,44 @@ removeAllButton.addEventListener("click", async () => {
 });
 
 cartItemsElements.forEach((element) => {
+	const itemName = element.querySelector(".title").innerText;
 	const removeItemButton = element.querySelector(".remove");
 	removeItemButton.addEventListener("click", async () => {
-		const isRemoved = await handleRemoveOne(
-			element.querySelector(".product").querySelector(".title").innerText
-		);
+		const isRemoved = await handleRemoveOne(itemName);
 		if (isRemoved) {
 			cartContainer.removeChild(element);
 		} else {
 			console.error("Nie udało się usunąć produktu.");
+		}
+	});
+
+	const incrItemButton = element.querySelector(".btn-incr");
+	incrItemButton.addEventListener("click", async () => {
+		let amount = parseInt(element.querySelector(".count").innerText);
+		const isChanged = await handleChangeAmount(itemName);
+		if (isChanged) {
+			element.querySelector(".count").innerText = amount + 1;
+		} else {
+			console.error("Błąd");
+		}
+	});
+	const decrItemButton = element.querySelector(".btn-decr");
+	decrItemButton.addEventListener("click", async () => {
+		let amount = parseInt(element.querySelector(".count").innerText);
+		if (amount === 1) {
+			const isRemoved = await handleRemoveOne(itemName);
+			if (isRemoved) {
+				cartContainer.removeChild(element);
+			} else {
+				console.error("Nie udało się usunąć produktu.");
+			}
+		} else {
+			const isChanged = await handleChangeAmount(itemName);
+			if (isChanged) {
+				element.querySelector(".count").innerText = amount - 1;
+			} else {
+				console.error("Błąd");
+			}
 		}
 	});
 });

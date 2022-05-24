@@ -7,3 +7,7 @@ export async function handleRemoveOne(productName) {
 	// call do removeOneCartData.php
 	return true;
 }
+
+export async function handleChangeAmount(productName) {
+	return true;
+}
