@@ -1,5 +1,9 @@
 import { getCartData } from "./koszyk.js";
-import { handleRemoveAll } from "./eventHandlers.js";
+import { handleRemoveAll, handleRemoveOne } from "./eventHandlers.js";
+
+const initialState = {
+	item: {},
+};
 
 const userId = 1;
 
@@ -28,7 +32,14 @@ removeAllButton.addEventListener("click", async () => {
 
 cartItemsElements.forEach((element) => {
 	const removeItemButton = element.querySelector(".remove");
-	removeItemButton.addEventListener("click", () => {
-		console.log(element);
+	removeItemButton.addEventListener("click", async () => {
+		const isRemoved = await handleRemoveOne(
+			element.querySelector(".product").querySelector(".title").innerText
+		);
+		if (isRemoved) {
+			cartContainer.removeChild(element);
+		} else {
+			console.error("Nie udało się usunąć produktu.");
+		}
 	});
 });
