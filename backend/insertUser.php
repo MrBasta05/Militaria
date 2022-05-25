@@ -15,5 +15,3 @@
     mysqli_query($con, $query);
 
     mysqli_close($con);
-
-?>
