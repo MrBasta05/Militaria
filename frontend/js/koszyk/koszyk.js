@@ -10,3 +10,15 @@ export async function getCartData(userId) {
 		console.error(err.message);
 	}
 }
+
+export function removeAllCartElements(
+	arrayOfElem,
+	cartItemsElements,
+	cartContainer
+) {
+	arrayOfElem.forEach((element) => {
+		if (cartItemsElements.includes(element)) {
+			cartContainer.removeChild(element);
+		}
+	});
+}

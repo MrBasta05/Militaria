@@ -1,6 +1,7 @@
-import { getCartData } from "./koszyk.js";
+import { getCartData, removeAllCartElements } from "./koszyk.js";
 import {
 	handleChangeAmount,
+	handlePay,
 	handleRemoveAll,
 	handleRemoveOne,
 } from "./eventHandlers.js";
@@ -26,16 +27,17 @@ console.log(cartItemsElements);
 removeAllButton.addEventListener("click", async () => {
 	const isRemoved = await handleRemoveAll();
 	if (isRemoved) {
-		[...cartContainer.children].forEach((element) => {
-			if (cartItemsElements.includes(element)) {
-				cartContainer.removeChild(element);
-			}
-		});
+		removeAllCartElements(
+			[...cartContainer.children],
+			cartItemsElements,
+			cartContainer
+		);
 	}
 });
 
 cartItemsElements.forEach((element) => {
 	const itemName = element.querySelector(".title").innerText;
+	// guzik usuń w koszyku
 	const removeItemButton = element.querySelector(".remove");
 	removeItemButton.addEventListener("click", async () => {
 		const isRemoved = await handleRemoveOne(itemName);
@@ -46,6 +48,7 @@ cartItemsElements.forEach((element) => {
 		}
 	});
 
+	// guziki + i - w koszyku
 	const incrItemButton = element.querySelector(".btn-incr");
 	incrItemButton.addEventListener("click", async () => {
 		let amount = parseInt(element.querySelector(".count").innerText);
@@ -73,6 +76,25 @@ cartItemsElements.forEach((element) => {
 			} else {
 				console.error("Błąd");
 			}
+		}
+	});
+
+	const payButton = document.getElementById("btn-pay");
+	payButton.addEventListener("click", async () => {
+		console.log("handle pay");
+		const isPaid = await handlePay();
+		if (isPaid) {
+			const isRemoved = handleRemoveAll();
+			if (isRemoved) {
+				removeAllCartElements(
+					[...cartContainer.children],
+					cartItemsElements,
+					cartContainer
+				);
+				console.log("payment successfull");
+			}
+		} else {
+			console.error("Błąd z płatnością");
 		}
 	});
 });

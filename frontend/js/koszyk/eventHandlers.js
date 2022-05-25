@@ -11,3 +11,7 @@ export async function handleRemoveOne(productName) {
 export async function handleChangeAmount(productName) {
 	return true;
 }
+
+export async function handlePay() {
+	return true;
+}
