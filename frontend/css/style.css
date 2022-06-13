@@ -175,6 +175,8 @@ a:checked {
 .product-main {
 	overflow: hidden;
 	border: 2px solid black;
+	display: grid;
+	place-items: center;
 }
 
 .product-main > img {

@@ -10,14 +10,17 @@ categoryData(id).then((data) => {
 	data.forEach((product, index) => {
 		if (index > 0) {
 			const h3 = createElement("h3", {}, [product.nazwa]);
-			const koszt = createElement("div", {}, [product.koszt]);
+			const koszt = createElement("div", {}, [`${product.koszt}zł`]);
 			const opis = createElement("div", {}, [product.opis]);
 			const zdjecie = createElement("img", {
 				src: `./img/produkty/${product.id}.jpg`,
 			});
 			const productMain = createElement(
 				"div",
-				{ class: "product-main", onclick: "location.href = 'produkt.html'" },
+				{
+					class: "product-main",
+					onclick: `location.href = 'produkt.html?id=${product.id}'`,
+				},
 				[h3, koszt, opis, zdjecie]
 			);
 			main.append(productMain);

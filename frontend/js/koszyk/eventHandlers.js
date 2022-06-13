@@ -1,10 +1,10 @@
 export async function handleRemoveAll() {
-	// call do removeAllCartData.php
-	return true;
+	const res = await fetch("../backend/removeAllCartData.php");
+	return await res.json();
 }
 
-export async function handleRemoveOne(productName) {
-	// call do removeOneCartData.php
+export async function handleRemoveOne(id) {
+	const res = await fetch(`../backend/removeOneCartData.php?id=${id}`);
 	return true;
 }
 

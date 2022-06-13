@@ -5,7 +5,10 @@ async function displayMainProducts() {
 	console.log(res);
 	for (let i = 0; i < 6; i++) {
 		console.log("test", mainProducts[i].children, res[i]);
-		mainProducts[i].setAttribute("onclick", "location.html = produkt.html");
+		mainProducts[i].setAttribute(
+			"onclick",
+			`location.href = 'produkt.html?id=${i + 1}'`
+		);
 		mainProducts[i].children[0].innerText = res[i].nazwa;
 		// mainProducts[i].children[1].innerText = res[i].opis;
 		mainProducts[i].children[2].innerText = `${res[i].koszt}zł`;
