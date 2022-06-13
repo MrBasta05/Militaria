@@ -16,6 +16,7 @@ const username = "GIGACHAD";
 const cartContainer = document.querySelector(".cart-container");
 const cartItemsElements = [];
 async function cartData() {
+	const total = document.querySelector(".total-amount");
 	const data = await getCartData(username);
 	data.forEach((cartElem) => {
 		const image = createElement("img", {
@@ -43,8 +44,9 @@ async function cartData() {
 		]);
 		cartItemsElements.push(cartItems);
 		document.querySelector(".checkout").before(cartItems);
+		total.textContent = parseInt(total.textContent) + parseInt(cartElem.koszt);
 	});
-
+	total.textContent += "zł";
 	cartItemsElements.forEach((element) => {
 		const itemName = element.querySelector(".title").innerText;
 		// guzik usuń w koszyku
@@ -53,6 +55,9 @@ async function cartData() {
 			const isRemoved = await handleRemoveOne(itemName);
 			if (isRemoved) {
 				cartContainer.removeChild(element);
+				total.textContent =
+					parseInt(total.textContent) -
+					parseInt(element.querySelector(".amount").textContent);
 			} else {
 				console.error("Nie udało się usunąć produktu.");
 			}
@@ -74,6 +79,10 @@ async function cartData() {
 			let amount = parseInt(element.querySelector(".count").innerText);
 			if (amount === 1) {
 				const isRemoved = await handleRemoveOne(itemName);
+				total.textContent =
+					parseInt(total.textContent) -
+					parseInt(element.querySelector(".amount").textContent);
+
 				if (isRemoved) {
 					cartContainer.removeChild(element);
 				} else {
