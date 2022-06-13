@@ -1,7 +1,7 @@
 <?php
 $con = mysqli_connect('localhost', 'root', '', 'militaria');
 $username = $_REQUEST['user'];
-$query = 'SELECT produkt.nazwa, produkt.koszt, zawartosc_koszyka.ilosc from uzytkownik join zawartosc_koszyka join produkt on uzytkownik.id = zawartosc_koszyka.uzytkownik_id and zawartosc_koszyka.produkt_id = produkt.id where uzytkownik.nazwa = "' . $username . '"';
+$query = 'SELECT produkt.nazwa, produkt.koszt, zawartosc_koszyka.ilosc, produkt.id from uzytkownik join zawartosc_koszyka join produkt on uzytkownik.id = zawartosc_koszyka.uzytkownik_id and zawartosc_koszyka.produkt_id = produkt.id where uzytkownik.nazwa = "' . $username . '"';
 $req = mysqli_query($con, $query);
 // echo $username;
 $wynik = array();

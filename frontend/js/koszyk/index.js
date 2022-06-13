@@ -18,7 +18,9 @@ const cartItemsElements = [];
 async function cartData() {
 	const data = await getCartData(username);
 	data.forEach((cartElem) => {
-		const image = createElement("img", { src: "none" });
+		const image = createElement("img", {
+			// src: `./img/produkty/${cartElem.id}.jpg`
+		});
 		const imageBox = createElement("div", { class: "image-box" }, [image]);
 		const title = createElement("h1", { class: "title" }, [cartElem.nazwa]);
 		const product = createElement("div", { class: "product" }, [title]);
