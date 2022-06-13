@@ -1,6 +1,6 @@
 async function displayMainProducts() {
 	const mainProducts = document.getElementsByClassName("product-main");
-	const req = await fetch("getData.php");
+	const req = await fetch("../backend/getData.php");
 	const res = await req.json();
 	console.log(res);
 	for (let i = 0; i < 6; i++) {
