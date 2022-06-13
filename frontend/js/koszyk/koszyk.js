@@ -1,9 +1,9 @@
 import axios from "https://cdn.skypack.dev/axios";
 
-export async function getCartData(userId) {
+export async function getCartData(username) {
 	try {
 		const { data } = await axios.get(
-			`../backend/getCartData.php?user=${userId}`
+			`../backend/getCartData.php?user=${username}`
 		);
 		return data;
 	} catch (err) {

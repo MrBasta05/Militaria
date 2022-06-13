@@ -5,25 +5,50 @@ import {
 	handleRemoveAll,
 	handleRemoveOne,
 } from "./eventHandlers.js";
+import createElement from "../helpers/createElement.js";
 
 const initialState = {
 	item: {},
 };
 
-const userId = 1;
+const username = "GIGACHAD";
 
-getCartData(userId);
-
-// Removes all cart items if data is successfully removed from database
 const cartContainer = document.querySelector(".cart-container");
-const removeAllButton = document.getElementById("removeAllButton");
 const cartItemsElements = [];
-[...cartContainer.children].forEach((element) => {
-	if (element.className === "cart-items") {
-		cartItemsElements.push(element);
-	}
-});
+async function cartData() {
+	const data = await getCartData(username);
+	data.forEach((cartElem) => {
+		const image = createElement("img", { src: "none" });
+		const imageBox = createElement("div", { class: "image-box" }, [image]);
+		const title = createElement("h1", { class: "title" }, [cartElem.nazwa]);
+		const product = createElement("div", { class: "product" }, [title]);
+		const btnPlus = createElement("div", { class: "btn btn-incr" }, ["+"]);
+		const btnMin = createElement("div", { class: "btn btn-decr" }, ["-"]);
+		const count = createElement("div", { class: "count" }, [cartElem.ilosc]);
+		const counter = createElement("div", { class: "counter" }, [
+			btnPlus,
+			count,
+			btnMin,
+		]);
+		const amount = createElement("div", { class: "amount" }, [cartElem.koszt]);
+		const remove = createElement("div", { class: "remove" }, ["Usuń"]);
+		const prices = createElement("div", { class: "prices" }, [amount, remove]);
+		const cartItems = createElement("div", { class: "cart-items" }, [
+			imageBox,
+			product,
+			counter,
+			prices,
+		]);
+		cartItemsElements.push(cartItems);
+		document.querySelector(".checkout").before(cartItems);
+	});
+}
+cartData();
+// Removes all cart items if data is successfully removed from database
+const removeAllButton = document.getElementById("removeAllButton");
+
 console.log(cartItemsElements);
+
 removeAllButton.addEventListener("click", async () => {
 	const isRemoved = await handleRemoveAll();
 	if (isRemoved) {
