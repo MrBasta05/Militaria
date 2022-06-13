@@ -1,8 +1,8 @@
 /* colors */
 :root {
   --nav-bg-color: #2e8b57;
-  --main-bg-color: #60a07c;
-  --text-color: #fff;
+  --main-bg-color: #fff;
+  --text-color: #000;
 }
 /* ******************** */
 
@@ -161,8 +161,7 @@ footer a, a:visited, a:checked{
 }
 
 input[type=text] {
-  position: absolute;
-  left: 150px;
+
   margin: auto;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border: solid 0;
