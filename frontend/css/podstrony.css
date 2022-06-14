@@ -32,7 +32,6 @@ nav {
 	display: flex;
 	position: fixed;
 	width: 100%;
-	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
 	background-color: var(--nav-bg-color);
@@ -47,6 +46,12 @@ a:checked {
 	color: #fff;
 	text-decoration: none;
 	font-size: 28px;
+}
+
+form {
+	display: grid;
+	place-items: center;
+	max-width: 300px;
 }
 
 .menu {
@@ -115,15 +120,28 @@ a:checked {
 	width: 80px;
 }
 
-input[type="text"] {
+.autocomplete {
 	position: absolute;
-	left: 150px;
-	margin: auto;
+	top: 90px;
+	background-color: white;
+	color: black;
+	font-size: 1.5rem;
+	list-style: none;
+	padding: 0;
+}
+
+.autocomplete > li {
+	border-bottom: 1px solid black;
+}
+
+input[type="text"] {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	border: solid 0;
 	border-radius: 20px;
 	height: 40px;
-	width: 500px;
+	width: 100%;
+	font-size: 1.5rem;
+	padding-left: 2rem;
 }
 
 main {
@@ -180,7 +198,7 @@ a:checked {
 }
 
 /* MEDIA QUERY */
-@media (max-width: 1450px) {
+@media (max-width: 976px) {
 	footer {
 		display: grid;
 		grid-template-columns: 2fr;
@@ -197,9 +215,6 @@ a:checked {
 	a:visited,
 	a:checked {
 		font-size: 18px;
-	}
-	.logo {
-		display: none;
 	}
 	.menu-button-container {
 		display: flex;
@@ -251,8 +266,8 @@ a:checked {
 	}
 
 	input[type="text"] {
-		position: relative;
-		left: 0px;
+		/* position: relative;
+		left: 0px; */
 		margin: auto;
 		height: 40px;
 		width: 80%;

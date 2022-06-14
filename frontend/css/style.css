@@ -110,6 +110,19 @@ a:checked {
 	width: 80px;
 }
 
+.autocomplete {
+	position: absolute;
+	background-color: white;
+	color: black;
+	font-size: 1.5rem;
+	list-style: none;
+	padding: 0;
+}
+
+.autocomplete > li {
+	border-bottom: 1px solid black;
+}
+
 input[type="text"] {
 	margin: auto;
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -117,13 +130,16 @@ input[type="text"] {
 	border-radius: 20px;
 	height: 40px;
 	width: 500px;
+	font-size: 1.5rem;
+	padding-left: 2rem;
 }
 
 main {
 	background-color: var(--main-bg-color);
 	width: 80%;
 	margin: auto;
-	padding-top: 100px;
+	padding-top: 140px;
+	padding-bottom: 4rem;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 10px;
@@ -151,7 +167,7 @@ footer {
 footer a,
 a:visited,
 a:checked {
-	color: var(--text-color);
+	/* color: var(--text-color); */
 }
 
 .dane {
@@ -173,7 +189,9 @@ a:checked {
 }
 
 .product-main {
+	cursor: pointer;
 	overflow: hidden;
+	text-align: center;
 	border: 2px solid black;
 	display: grid;
 	place-items: center;

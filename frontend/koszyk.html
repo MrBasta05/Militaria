@@ -24,8 +24,15 @@
 			<label class="menu-button-container" for="menu-toggle">
 				<div class="menu-button"></div>
 			</label>
-			<form action="GET">
-				<input type="text" name="search" placeholder="🔎" required />
+			<form action="GET" id="search-bar">
+				<input
+					type="text"
+					name="search"
+					placeholder="🔎"
+					required
+					autocomplete="off"
+				/>
+				<ul class="autocomplete"></ul>
 			</form>
 			<ul class="menu">
 				<li><a href="kategoria.html?kategoria=1">AMUNICJA</a></li>

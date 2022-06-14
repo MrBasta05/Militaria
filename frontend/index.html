@@ -13,7 +13,7 @@
 			href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500&display=swap"
 			rel="stylesheet"
 		/>
-		<script defer src="index.js"></script>
+		<script type="module" src="index.js"></script>
 		<title>Warzone</title>
 	</head>
 	<body>
@@ -25,9 +25,10 @@
 			<label class="menu-button-container" for="menu-toggle">
 				<div class="menu-button"></div>
 			</label>
-			<form action="index.html" method="get"  
+			<form action="index.html" onsubmit="(e)=>{e.preventDefault()};" 
 			id="search-bar">
-				<input type="text" name="search" placeholder="🔎" required>
+				<input type="text" name="search" placeholder="🔎" required autocomplete="off">
+				<ul class="autocomplete"></ul>
 			</form>
 			<ul class="menu">
 				<li><a href="./kategoria.html?kategoria=1">AMUNICJA</a></li>
@@ -36,6 +37,7 @@
 				<li><a href="./kategoria.html?kategoria=4">POJAZDY</a></li>
 				<li><a href="./kategoria.html?kategoria=5">NARZĘDZIA</a></li>
 				<li><a href="koszyk.html">🛒</a></li>
+				<li><a href="logowanie.html"><img src="https://img.icons8.com/material-sharp/24/undefined/user.png"></a></li>
 			</ul>
 		</nav>
 		<main>

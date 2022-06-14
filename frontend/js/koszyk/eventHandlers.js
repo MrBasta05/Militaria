@@ -8,7 +8,10 @@ export async function handleRemoveOne(id) {
 	return true;
 }
 
-export async function handleChangeAmount(productName) {
+export async function handleChangeAmount(productName, amount) {
+	const res = await fetch(
+		`../backend/changeAmount.php?id=${productName}&amount=${amount}`
+	);
 	return true;
 }
 
